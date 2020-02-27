@@ -72,7 +72,7 @@ class SquirrelCensus::Scraper
 
 end
 
-
+# SquirrelCensus::Scraper.new.create_squirrels_from_aoh
 
 # Scraper.new.make_squirrels
 # SquirrelCensus::Scraper.new.make_squirrel_hash

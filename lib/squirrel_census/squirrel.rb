@@ -5,7 +5,13 @@ class SquirrelCensus::Squirrel
 	@@all = []
 
 	def initialize(attrs)
-		attrs.each {|k,v| self.send("#{k}=", v)}
+		attrs.each do |k,v|
+			if k != "date"
+				self.send("#{k}=", v)
+			else
+				self.date = SquirrelCensus::Date.find_or_create_by_date(v, self)
+			end
+		end
 		save
 	end
 
