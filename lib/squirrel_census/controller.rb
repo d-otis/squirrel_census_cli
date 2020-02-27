@@ -1,7 +1,16 @@
 class SquirrelCensus::Controller
 
+	def start
+		scrape
+		call
+	end
+
+	def scrape
+		SquirrelCensus::Scraper.new.create_squirrels_from_aoh
+	end
+
+
 	def call
-		# SquirrelCensus::Scraper.new.make_squirrels
 		greeting
 		command_list
 		input = gets.chomp

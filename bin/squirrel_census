@@ -3,6 +3,4 @@
 require "bundler/setup"
 require "squirrel_census"
 
-SquirrelCensus::Scraper.new.create_squirrels_from_aoh
-
-SquirrelCensus::Controller.new.call
+SquirrelCensus::Controller.new.start
