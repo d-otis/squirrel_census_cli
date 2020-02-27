@@ -1,4 +1,5 @@
 class SquirrelCensus::Controller
+	# include RubyFiglet
 
 	def start
 		scrape
@@ -53,12 +54,12 @@ class SquirrelCensus::Controller
 	end
 
 	def greeting
-		# puts "Squirrel // CLI".art!
-		puts "Squirrel // CLI"
+		RubyFiglet::Figlet.new("Squirrel CLI","Modular").show
 	end
 
 	def command_list
 		puts ""
+		# RubyFiglet::Figlet.new("List of Commands","catwalk").show
 		puts "List of Commands"
 		puts "================"
 		puts "main - Main Menu"

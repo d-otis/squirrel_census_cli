@@ -3,7 +3,6 @@ PATH
   specs:
     squirrel_census (0.1.0)
       json
-      ruby_figlet
 
 GEM
   remote: https://rubygems.org/
@@ -38,6 +37,7 @@ DEPENDENCIES
   pry
   rake (~> 12.0)
   rspec (~> 3.0)
+  ruby_figlet (~> 0.6.1)
   squirrel_census!
 
 BUNDLED WITH

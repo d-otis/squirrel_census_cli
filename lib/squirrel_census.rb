@@ -1,6 +1,6 @@
 # ENVIRONMENT FILE
-# load all the files we need to run our app
 
+# load all the files we need to run our app
 require "squirrel_census/version"
 require_relative 'squirrel_census/controller'
 require_relative 'squirrel_census/scraper'
