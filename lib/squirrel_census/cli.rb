@@ -20,7 +20,7 @@ class SquirrelCensus::CLI
 				when 'main'
 					call 
 				when 'total'
-					puts "#{SquirrelCensus::Squirrel.all.count} squirrels counted over #{SquirrelCensus::Date.all.size} days in Central Park."
+					puts total
 				when "colors"
 					print_fur
 				when 'max'
@@ -76,6 +76,10 @@ class SquirrelCensus::CLI
 		SquirrelCensus::Squirrel.get_fur_hash.each do |color, num|
 			puts "There were #{num} #{color.downcase} squirrels."
 		end
+	end
+
+	def total
+		"#{SquirrelCensus::Squirrel.all.count} squirrels counted over #{SquirrelCensus::Date.all.size} days in Central Park."
 	end
 
 end
