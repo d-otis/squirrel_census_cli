@@ -33,7 +33,6 @@ class SquirrelCensus::Scraper
 			new_squirrel.runs_from = squirrel["runs_from"]
 		end
 	end
-
 end
 
 # Scraper.new.make_squirrels
