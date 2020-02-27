@@ -4,7 +4,8 @@ class SquirrelCensus::Squirrel
 
 	@@all = []
 
-	def initialize
+	def initialize(attrs)
+		attrs.each {|k,v| self.send("#{k}=", v)}
 		save
 	end
 

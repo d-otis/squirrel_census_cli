@@ -28,6 +28,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'ruby_figlet'
   spec.add_dependency 'json'
-  # spec.add_dependency 'net/http'
   spec.add_development_dependency 'pry'
 end

@@ -1,9 +1,7 @@
-
-
 class SquirrelCensus::Controller
 
 	def call
-		SquirrelCensus::Scraper.new.make_squirrels
+		# SquirrelCensus::Scraper.new.make_squirrels
 		greeting
 		command_list
 		input = gets.chomp
