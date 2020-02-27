@@ -1,5 +1,5 @@
 class SquirrelCensus::Controller
-	# include RubyFiglet
+	# include SquirrelCensus::Spacer
 
 	def start
 		scrape
