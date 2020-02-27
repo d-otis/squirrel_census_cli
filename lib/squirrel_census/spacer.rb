@@ -1,4 +1,4 @@
-module SquirrelCensus::Spacer
+module Spacer
 
 	def spacer
 		puts ""

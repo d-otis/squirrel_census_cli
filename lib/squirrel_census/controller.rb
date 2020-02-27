@@ -1,5 +1,5 @@
 class SquirrelCensus::Controller
-	include SquirrelCensus::Spacer
+	# include Spacer
 
 	def start
 		scrape
@@ -41,9 +41,9 @@ class SquirrelCensus::Controller
 		# are_you_sure?
 	end
 
-	# def spacer
-	# 	puts ""
-	# end
+	def spacer
+		puts ""
+	end
 
 	def are_you_sure?
 		puts ""
