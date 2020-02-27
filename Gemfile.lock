@@ -38,6 +38,7 @@ DEPENDENCIES
   pry
   rake (~> 12.0)
   rspec (~> 3.0)
+  ruby_figlet
   squirrel_census!
 
 BUNDLED WITH

@@ -1,5 +1,6 @@
+
+
 class SquirrelCensus::Controller
-	# extend RubyFiglet
 
 	def call
 		SquirrelCensus::Scraper.new.make_squirrels
