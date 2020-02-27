@@ -22,7 +22,7 @@ class SquirrelCensus::Controller
 				when 'total'
 					puts "#{SquirrelCensus::Squirrel.all.count} squirrels counted over #{SquirrelCensus::Date.all.size} days in Central Park."
 				when "colors"
-					SquirrelCensus::Squirrel.print_fur
+					print_fur
 				when 'max'
 					SquirrelCensus::Squirrel.max_per_hectare
 				when 'dates'
@@ -70,6 +70,12 @@ class SquirrelCensus::Controller
 		puts "help - command list"
 		puts "exit - quits program"
 		puts ""
+	end
+
+	def print_fur
+		SquirrelCensus::Squirrel.get_fur_hash.each do |color, num|
+			puts "There were #{num} #{color.downcase} squirrels."
+		end
 	end
 
 end
