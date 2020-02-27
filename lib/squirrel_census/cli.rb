@@ -26,7 +26,7 @@ class SquirrelCensus::CLI
 				when 'max'
 					max_per_hectare
 				when 'dates'
-					SquirrelCensus::Date.list_all_dates
+					list_all_dates
 					spacer
 					SquirrelCensus::Date.user_date_select
 				when 'help'
@@ -85,6 +85,15 @@ class SquirrelCensus::CLI
 	def max_per_hectare
 		max = SquirrelCensus::Squirrel.get_hectare_hash.max_by {|k,v| v}
 		puts "The most squirrels per hectare were #{max[1]} in hectare: #{max[0]}"
+	end
+
+	def list_all_dates
+		SquirrelCensus::Date.sorted_dates.each_with_index do |date, index|
+			month = date.date[0..1]
+			day = date.date[2..3]
+			year = date.date[4..7]
+			puts "#{index + 1}. #{month}/#{day}/#{year} => #{date.squirrels.count} sightings"
+		end
 	end
 
 end
