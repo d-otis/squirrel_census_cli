@@ -20,11 +20,11 @@ class SquirrelCensus::CLI
 				when 'main'
 					call 
 				when 'total'
-					puts total
+					total
 				when "colors"
 					print_fur
 				when 'max'
-					SquirrelCensus::Squirrel.max_per_hectare
+					max_per_hectare
 				when 'dates'
 					SquirrelCensus::Date.list_all_dates
 					spacer
@@ -79,7 +79,12 @@ class SquirrelCensus::CLI
 	end
 
 	def total
-		"#{SquirrelCensus::Squirrel.all.count} squirrels counted over #{SquirrelCensus::Date.all.size} days in Central Park."
+		puts "#{SquirrelCensus::Squirrel.all.count} squirrels counted over #{SquirrelCensus::Date.all.size} days in Central Park."
+	end
+
+	def max_per_hectare
+		max = SquirrelCensus::Squirrel.get_hectare_hash.max_by {|k,v| v}
+		puts "The most squirrels per hectare were #{max[1]} in hectare: #{max[0]}"
 	end
 
 end

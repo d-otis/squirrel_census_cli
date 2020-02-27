@@ -83,12 +83,6 @@ class SquirrelCensus::Squirrel
 		fur_hash
 	end
 
-	def self.print_fur
-		get_fur_hash.each do |color, num|
-			puts "There were #{num} #{color.downcase} squirrels."
-		end
-	end
-
 	def self.get_shift_hash
 		shift_hash = {}
 		self.all.each do |squirrel|
@@ -140,9 +134,5 @@ class SquirrelCensus::Squirrel
 		hect_hash
 	end
 
-	def self.max_per_hectare
-		max = get_hectare_hash.max_by {|k,v| v}
-		puts "The most squirrels per hectare were #{max[1]} in hectare: #{max[0]}"
-	end
 
 end
