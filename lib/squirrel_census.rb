@@ -8,3 +8,4 @@ require_relative './squirrel_census/squirrel.rb'
 
 # dependencies
 require 'pry'
+require 'ruby_figlet'
