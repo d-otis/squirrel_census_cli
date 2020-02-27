@@ -38,28 +38,28 @@ class SquirrelCensus::Date
 		SquirrelCensus::Date.all.sort_by(&:date)
 	end
 
-	def self.list_all_dates
-		self.sorted_dates.each_with_index do |date, index|
-			month = date.date[0..1]
-			day = date.date[2..3]
-			year = date.date[4..7]
-			puts "#{index + 1}. #{month}/#{day}/#{year} => #{date.squirrels.count} sightings"
-		end
-	end
+	# def self.list_all_dates
+	# 	self.sorted_dates.each_with_index do |date, index|
+	# 		month = date.date[0..1]
+	# 		day = date.date[2..3]
+	# 		year = date.date[4..7]
+	# 		puts "#{index + 1}. #{month}/#{day}/#{year} => #{date.squirrels.count} sightings"
+	# 	end
+	# end
 
-	def self.user_date_select
-		puts "Select a date by number in list"
-		input = gets.chomp.downcase
-		puts ""
-		index = input.to_i - 1
-		if !index.between?(0, SquirrelCensus::Date.all.count)
-			puts ""
-			puts "Invalid Input : Please enter a number from the list"
-			puts ""
-		else
-			SquirrelCensus::Squirrel.get_selected_date(index)
-		end
-	end
+	# def self.user_date_select
+	# 	puts "Select a date by number in list"
+	# 	input = gets.chomp.downcase
+	# 	puts ""
+	# 	index = input.to_i - 1
+	# 	if !index.between?(0, SquirrelCensus::Date.all.count)
+	# 		puts ""
+	# 		puts "Invalid Input : Please enter a number from the list"
+	# 		puts ""
+	# 	else
+	# 		SquirrelCensus::Squirrel.get_selected_date(index)
+	# 	end
+	# end
 
 end
 
