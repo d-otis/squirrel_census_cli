@@ -1,4 +1,6 @@
 class SquirrelCensus::Controller
+	# extend RubyFiglet
+
 	def call
 		greeting
 		command_list
@@ -8,20 +10,20 @@ class SquirrelCensus::Controller
 				when 'main'
 					call 
 				when 'total'
-					puts "#{Squirrel.all.count} squirrels counted over #{Date.all.size} days in Central Park."
+					puts "#{SquirrelCensus::Squirrel.all.count} squirrels counted over #{SquirrelCensus::Date.all.size} days in Central Park."
 				when "colors"
-					Squirrel.print_fur
+					SquirrelCensus::Squirrel.print_fur
 				when 'max'
-					Squirrel.max_per_hectare
+					SquirrelCensus::Squirrel.max_per_hectare
 				when 'dates'
-					Date.list_all_dates
+					SquirrelCensus::Date.list_all_dates
 					spacer
-					Date.user_date_select
+					SquirrelCensus::Date.user_date_select
 				when 'help'
 					command_list
 			end
 			spacer
-			puts "Please enter dates/colors/total/help/exit : "
+			puts "Please enter main/total/colors/max/dates/exit : "
 			input = gets.chomp
 			# call
 			spacer
