@@ -1,4 +1,4 @@
-class SquirrelCensus::Controller
+class SquirrelCensus::CLI
 	# include Spacer
 
 	def start
