@@ -67,7 +67,20 @@ class SquirrelCensus::Squirrel
 		puts "Approaches : #{sq.approaches}"
 		puts "Indifferent : #{sq.indifferent}"
 		puts "Runs From : #{sq.runs_from}"
+
+		coords = [sq.y, sq.x]
+
+		puts "Would you like to view the squirrel location in Google Maps?"
+		input = gets.strip
+		open_location_in_google_maps(coords) if ['y', 'yes'].include?(input.downcase)
 	end
+
+	def self.open_location_in_google_maps(coords)
+		prefix = "https://www.google.com/maps/search/?api=1&query="
+		url = prefix + coords[0] + coords[1]
+		system("open '#{url}'")
+	end
+
 
 	def self.get_fur_hash
 		fur_hash = {"No Color Reported" => 0}

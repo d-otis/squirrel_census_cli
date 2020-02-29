@@ -110,9 +110,7 @@ class SquirrelCensus::CLI
 		end
 	end
 
-	def open_location_in_google_maps
-		
-	end
+
 
 
 end
