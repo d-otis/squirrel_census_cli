@@ -9,8 +9,9 @@ class SquirrelCensus::Scraper
 
 	def get_squirrel_aoh
 		get_json.collect do |squirrel|
-			# binding.pry
 			squirrel_hash = {
+				"x" => squirrel["x"],
+				"y" => squirrel["y"],
 				"unique_squirrel_id" => squirrel["unique_squirrel_id"],
 				"hectare" => squirrel["hectare"],
 				"shift" => squirrel["shift"],

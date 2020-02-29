@@ -1,6 +1,6 @@
 class SquirrelCensus::Squirrel
 
-	attr_accessor :unique_squirrel_id, :hectare, :shift, :date, :hectare_squirrel_number, :age, :primary_fur_color, :highlight_fur_color, :combination_of_primary_and, :location, :above_ground_sighter, :running, :chasing, :climbing, :eating, :foraging, :kuks, :quaas, :moans, :tail_flags, :tail_twitches, :approaches, :indifferent	, :runs_from
+	attr_accessor :x, :y, :unique_squirrel_id, :hectare, :shift, :date, :hectare_squirrel_number, :age, :primary_fur_color, :highlight_fur_color, :combination_of_primary_and, :location, :above_ground_sighter, :running, :chasing, :climbing, :eating, :foraging, :kuks, :quaas, :moans, :tail_flags, :tail_twitches, :approaches, :indifferent, :runs_from
 
 	@@all = []
 
