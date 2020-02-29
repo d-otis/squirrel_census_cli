@@ -63,7 +63,7 @@ class SquirrelCensus::CLI
 		puts "List of Commands"
 		puts "================"
 		puts "main - Main Menu"
-		puts "dates - lists the dates of the census and the number of squirrels found each day"
+		puts "dates - lists of dates >> menu dive for detailed info"
 		puts "total - get the total number of squirrels"
 		puts "colors - get a list of all the squirrel colors"
 		puts "max - to reveal the max number of squirrels per hectare"
