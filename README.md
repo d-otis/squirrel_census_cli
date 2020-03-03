@@ -1,8 +1,10 @@
 # SquirrelCensus
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/squirrel_census`. To experiment with that code, run `bin/console` for an interactive prompt.
+Using NYC Open Data API for the Central Park Squirrel Census of 2018. I created a CLI that utilizes collaborating objects created from the API's JSON, `Squirrel` and `Date`. Each squirrel sighting instantiates a new `Squirrel` instance and the same goes for the `Date` class. A `Squirrel` instance has a `Date` and a `Date` object has many `Squirrel` instances.
 
-TODO: Delete this and the text above, and describe your gem
+Squirrel API
+https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Census-Squirrel-Data/vfnx-vebw
+
 
 ## Installation
 
