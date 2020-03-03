@@ -14,7 +14,7 @@ class SquirrelCensus::CLI
 	def call
 		greeting
 		command_list
-		input = gets.chomp
+		input = gets.strip.downcase
 		while input != 'exit'
 			case input
 				when 'main'
@@ -34,7 +34,7 @@ class SquirrelCensus::CLI
 			end
 			spacer
 			puts "Please enter main/total/colors/max/dates/exit : "
-			input = gets.chomp
+			input = gets.strip.downcase
 			# call
 			spacer
 		end
@@ -49,7 +49,7 @@ class SquirrelCensus::CLI
 		puts ""
 		puts "Are you sure you want to exit? (y/n)"
 		puts ""
-		input = gets.chomp.downcase
+		input = gets.strip.downcase
 		call if input == "n"
 	end
 
@@ -98,7 +98,7 @@ class SquirrelCensus::CLI
 
 	def user_date_select
 		puts "Select a date by number in list"
-		input = gets.chomp.downcase
+		input = gets.strip.downcase
 		spacer
 		index = input.to_i - 1
 		if !index.between?(0, SquirrelCensus::Date.all.count)

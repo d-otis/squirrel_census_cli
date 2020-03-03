@@ -67,18 +67,22 @@ class SquirrelCensus::Squirrel
 		puts "Approaches : #{sq.approaches}"
 		puts "Indifferent : #{sq.indifferent}"
 		puts "Runs From : #{sq.runs_from}"
-
-		coords = [sq.y, sq.x]
-
-		puts "Would you like to view the squirrel location in Google Maps?"
-		input = gets.strip
-		open_location_in_google_maps(coords) if ['y', 'yes'].include?(input.downcase)
+		puts ""
+		open_location_in_google_maps(sq) 
 	end
 
-	def self.open_location_in_google_maps(coords)
-		prefix = "https://www.google.com/maps/search/?api=1&query="
-		url = prefix + coords[0] + coords[1]
-		system("open '#{url}'")
+	# https://www.google.com/maps/search/?api=1&query=
+	# negative number is second which is sq.x
+	# https://www.google.com/maps/@?api=1&map_action=map&center=40.7693045133578,-73.9719735582476&zoom=12&basemap=satellite
+
+	def self.open_location_in_google_maps(squirrel)
+		puts "Would you like to view the squirrel location in Google Maps? (y/n)"
+		input = gets.strip.downcase
+		if ['y', 'yes'].include?(input.downcase)
+			prefix = "https://www.google.com/maps/search/?api=1&query="
+			url = "#{prefix}#{squirrel.y},#{squirrel.x}"
+			system("open '#{url}'")
+		end
 	end
 
 
