@@ -34,7 +34,6 @@ class SquirrelCensus::Squirrel
 	def self.list_squirrels_by_date(date_obj)
 		puts "Squirrels counted on #{date_obj.date[0..1]}/#{date_obj.date[2..3]}/#{date_obj.date[4..7]}"
 		date_obj.squirrels.each_with_index do |squirrel, index|
-			afraid = squirrel.runs_from == true ? true : false
 			puts "#{index + 1}. ##{squirrel.unique_squirrel_id}"
 		end
 		select_squirrel_from_date(date_obj)
@@ -78,7 +77,7 @@ class SquirrelCensus::Squirrel
 	def self.open_location_in_google_maps(squirrel)
 		puts "Would you like to view the squirrel location in Google Maps? (y/n)"
 		input = gets.strip.downcase
-		if ['y', 'yes'].include?(input.downcase)
+		if ['y', 'yes'].include?(input)
 			prefix = "https://www.google.com/maps/search/?api=1&query="
 			url = "#{prefix}#{squirrel.y},#{squirrel.x}"
 			system("open '#{url}'")
