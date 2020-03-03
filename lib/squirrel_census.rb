@@ -6,7 +6,6 @@ require_relative 'squirrel_census/cli'
 require_relative 'squirrel_census/scraper'
 require_relative 'squirrel_census/date'
 require_relative 'squirrel_census/squirrel'
-require_relative 'squirrel_census/spacer'
 
 # dependencies
 require 'pry'
