@@ -34,7 +34,6 @@ class SquirrelCensus::Scraper
 				"indifferent" => squirrel["indifferent"],
 				"runs_from" => squirrel["runs_from"]
 			}
-			# squirrel_hash
 		end
 	end
 
@@ -45,9 +44,3 @@ class SquirrelCensus::Scraper
 	end
 
 end
-
-# SquirrelCensus::Scraper.new.create_squirrels_from_aoh
-
-# Scraper.new.make_squirrels
-# SquirrelCensus::Scraper.new.make_squirrel_hash
-# binding.pry

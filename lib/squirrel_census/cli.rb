@@ -35,7 +35,6 @@ class SquirrelCensus::CLI
 			spacer
 			puts "Please enter main/total/colors/max/dates/exit : "
 			input = gets.strip.downcase
-			# call
 			spacer
 		end
 		# are_you_sure?
@@ -59,7 +58,6 @@ class SquirrelCensus::CLI
 
 	def command_list
 		puts ""
-		# RubyFiglet::Figlet.new("List of Commands","catwalk").show
 		puts "List of Commands"
 		puts "================"
 		puts "main - Main Menu"
@@ -109,8 +107,4 @@ class SquirrelCensus::CLI
 			SquirrelCensus::Squirrel.get_selected_date(index)
 		end
 	end
-
-
-
-
 end

@@ -88,7 +88,6 @@ class SquirrelCensus::Squirrel
 	def self.get_fur_hash
 		fur_hash = {"No Color Reported" => 0}
 		self.all.each do |squirrel|
-			# binding.pry
 			if !fur_hash[squirrel.primary_fur_color]
 				fur_hash[squirrel.primary_fur_color] = 1
 			else
@@ -149,6 +148,4 @@ class SquirrelCensus::Squirrel
 		end
 		hect_hash
 	end
-
-
 end

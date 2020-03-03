@@ -36,5 +36,4 @@ class SquirrelCensus::Date
 	def self.sorted_dates
 		SquirrelCensus::Date.all.sort_by(&:date)
 	end
-
 end
