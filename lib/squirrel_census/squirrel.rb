@@ -33,8 +33,9 @@ class SquirrelCensus::Squirrel
 
 	def self.list_squirrels_by_date(date_obj)
 		puts "Squirrels counted on #{date_obj.date[0..1]}/#{date_obj.date[2..3]}/#{date_obj.date[4..7]}"
-		date_obj.squirrels.each_with_index do |squirrel, index|
-			puts "#{index + 1}. ##{squirrel.unique_squirrel_id}"
+		puts "=================================="
+		date_obj.squirrels.each.with_index(1) do |squirrel, index|
+			puts "#{index}. ##{squirrel.unique_squirrel_id}"
 		end
 		select_squirrel_from_date(date_obj)
 	end
