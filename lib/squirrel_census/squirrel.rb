@@ -85,11 +85,6 @@ class SquirrelCensus::Squirrel
 	def self.get_fur_hash
 		fur_hash = {"No Color Reported" => 0}
 		self.all.each do |squirrel|
-			# if !fur_hash[squirrel.primary_fur_color]
-			# 	fur_hash[squirrel.primary_fur_color] = 1
-			# else
-			# 	fur_hash[squirrel.primary_fur_color] += 1
-			# end
 			!fur_hash[squirrel.primary_fur_color] ? fur_hash[squirrel.primary_fur_color] = 1 : fur_hash[squirrel.primary_fur_color] += 1
 		end
 		fur_hash["No Color Reported"] = fur_hash.delete(nil)
