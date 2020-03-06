@@ -29,6 +29,8 @@ class SquirrelCensus::CLI
 					list_all_dates
 					spacer
 					user_date_select
+				when 'shift'
+					shift_report
 				when 'help'
 					command_list
 			end
@@ -65,6 +67,7 @@ class SquirrelCensus::CLI
 		puts "total - get the total number of squirrels"
 		puts "colors - get a list of all the squirrel colors"
 		puts "max - to reveal the max number of squirrels per hectare"
+		puts "shift - reports squirrel count for each shift"
 		puts "help - command list"
 		puts "exit - quits program"
 		puts ""
@@ -106,5 +109,9 @@ class SquirrelCensus::CLI
 		else
 			SquirrelCensus::Squirrel.get_selected_date(index)
 		end
+	end
+
+	def shift_report
+		SquirrelCensus::Squirrel.shift_report
 	end
 end
