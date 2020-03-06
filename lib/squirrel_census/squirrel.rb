@@ -94,11 +94,7 @@ class SquirrelCensus::Squirrel
 	def self.get_shift_hash
 		shift_hash = {}
 		self.all.each do |squirrel|
-			if !shift_hash[squirrel.shift]
-				shift_hash[squirrel.shift] = 1
-			else
-				shift_hash[squirrel.shift] += 1
-			end
+			!shift_hash[squirrel.shift] ? shift_hash[squirrel.shift] = 1 : shift_hash[squirrel.shift] += 1
 		end
 		shift_hash
 	end
