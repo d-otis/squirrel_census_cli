@@ -43,6 +43,7 @@ class SquirrelCensus::CLI
 		end
 	end
 
+
 	def input_validator(input)
 		puts "INVALID COMMAND!" if !['exit', 'main', 'total', 'colors', 'max', 'dates', 'shift', 'help'].include?(input)
 	end
@@ -136,8 +137,19 @@ class SquirrelCensus::CLI
 	def select_squirrel_from_date(date_obj)
 		puts ""
 		puts "Select a Squirrel from the List"
-		index = gets.chomp.to_i - 1
-		sq = date_obj.squirrels[index]
+		input = gets.strip.downcase.to_i
+		index = input - 1
+		if index >= 0
+			sq = date_obj.squirrels[index]
+			print_squirrel_profile(sq)
+		else
+			puts ""
+			puts "**INVALID SELECTION!**"
+			select_squirrel_from_date(date_obj)
+		end
+	end
+
+	def print_squirrel_profile(sq)
 		puts ""
 		puts "Data for Selected Squirrel"
 		puts "ID : #{sq.unique_squirrel_id}"
