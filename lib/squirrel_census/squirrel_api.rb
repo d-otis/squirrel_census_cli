@@ -1,4 +1,4 @@
-class SquirrelCensus::Scraper
+class SquirrelCensus::SquirrelAPI
 
 	def get_json
 		url = 'https://data.cityofnewyork.us/resource/vfnx-vebw.json?$$app_token=pZZ5ZSjEylb8x5UpVjVKoeByW'

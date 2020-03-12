@@ -7,7 +7,7 @@ class SquirrelCensus::CLI
 
 
 	def scrape
-		SquirrelCensus::Scraper.new.create_squirrels_from_aoh
+		SquirrelCensus::SquirrelAPI.new.create_squirrels_from_aoh
 	end
 
 
