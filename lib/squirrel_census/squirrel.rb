@@ -11,17 +11,15 @@ class SquirrelCensus::Squirrel
 		save
 	end
 
+
 	def save
 		@@all << self
 	end
 
+
 	def self.all
 		@@all
 	end
-
-	# https://www.google.com/maps/search/?api=1&query=
-	# negative number is second which is sq.x
-	# https://www.google.com/maps/@?api=1&map_action=map&center=40.7693045133578,-73.9719735582476&zoom=12&basemap=satellite
 
 
 	def self.get_fur_hash
@@ -33,6 +31,7 @@ class SquirrelCensus::Squirrel
 		fur_hash
 	end
 
+
 	def self.get_shift_hash
 		shift_hash = {}
 		self.all.each do |squirrel|
@@ -42,23 +41,10 @@ class SquirrelCensus::Squirrel
 	end
 
 
-	# def self.get_age_hash
-	# 	age_hash = {}
-	# 	self.all.each do |squirrel|
-	# 		if !age_hash[squirrel.age]
-	# 			age_hash[squirrel.age] = 1
-	# 		else
-	# 			age_hash[squirrel.age] += 1
-	# 		end
-	# 	end
-	# 	age_hash["Age Not Reported"] = age_hash.delete(nil)
-	# 	age_hash
-	# end
-
-
 	def self.find_by_hectare(hect)
 		self.all.select {|squirrel| squirrel.hectare == hect}
 	end
+
 
 	def self.get_hectare_hash
 		hect_hash = {}
@@ -71,4 +57,5 @@ class SquirrelCensus::Squirrel
 		end
 		hect_hash
 	end
+
 end

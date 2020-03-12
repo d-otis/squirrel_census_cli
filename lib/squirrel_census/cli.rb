@@ -1,10 +1,10 @@
 class SquirrelCensus::CLI
-	# include Spacer
 
 	def start
 		scrape
 		call
 	end
+
 
 	def scrape
 		SquirrelCensus::Scraper.new.create_squirrels_from_aoh
@@ -39,24 +39,18 @@ class SquirrelCensus::CLI
 			input = gets.strip.downcase
 			spacer
 		end
-		# are_you_sure?
 	end
+
 
 	def spacer
 		puts ""
 	end
 
-	def are_you_sure?
-		puts ""
-		puts "Are you sure you want to exit? (y/n)"
-		puts ""
-		input = gets.strip.downcase
-		call if input == "n"
-	end
 
 	def greeting
 		RubyFiglet::Figlet.new("Squirrel CLI","Modular").show
 	end
+
 
 	def command_list
 		puts ""
@@ -73,20 +67,24 @@ class SquirrelCensus::CLI
 		puts ""
 	end
 
+
 	def print_fur
 		SquirrelCensus::Squirrel.get_fur_hash.each do |color, num|
 			puts "There were #{num} #{color.downcase} squirrels."
 		end
 	end
 
+
 	def total
 		puts "#{SquirrelCensus::Squirrel.all.count} squirrels counted over #{SquirrelCensus::Date.all.size} days in Central Park."
 	end
+
 
 	def max_per_hectare
 		max = SquirrelCensus::Squirrel.get_hectare_hash.max_by {|k,v| v}
 		puts "The most squirrels per hectare were #{max[1]} in hectare: #{max[0]}"
 	end
+
 
 	def list_all_dates
 		SquirrelCensus::Date.sorted_dates.each.with_index(1) do |date, index|
@@ -96,6 +94,7 @@ class SquirrelCensus::CLI
 			puts "#{index}. #{month}/#{day}/#{year} => #{date.squirrels.count} sightings"
 		end
 	end
+
 
 	def user_date_select
 		puts "Select a date by number in list"
@@ -111,9 +110,11 @@ class SquirrelCensus::CLI
 		end
 	end
 
+
 	def get_selected_date(index)
 		list_squirrels_by_date(SquirrelCensus::Date.sorted_dates[index])
 	end
+
 
 	def list_squirrels_by_date(date_obj)
 		puts "Squirrels counted on #{date_obj.date[0..1]}/#{date_obj.date[2..3]}/#{date_obj.date[4..7]}"
@@ -123,6 +124,7 @@ class SquirrelCensus::CLI
 		end
 		select_squirrel_from_date(date_obj)
 	end
+
 
 	def select_squirrel_from_date(date_obj)
 		puts ""
@@ -157,6 +159,9 @@ class SquirrelCensus::CLI
 
 
 	def open_location_in_google_maps(squirrel)
+		# https://www.google.com/maps/search/?api=1&query=
+		# negative number is second which is sq.x
+		# https://www.google.com/maps/@?api=1&map_action=map&center=40.7693045133578,-73.9719735582476&zoom=12&basemap=satellite
 		puts "Would you like to view the squirrel location in Google Maps? (y/n)"
 		input = gets.strip.downcase
 		if ['y', 'yes'].include?(input)
@@ -166,13 +171,9 @@ class SquirrelCensus::CLI
 		end
 	end
 
+
 	def shift_report
 		puts "#{SquirrelCensus::Squirrel.get_shift_hash["AM"]} squirrels were spotted during the AM shift, while #{SquirrelCensus::Squirrel.get_shift_hash["PM"]} were spotted during the PM shift."
 	end
 
-	# def age_report
-	# 	SquirrelCensus::Squirrel.get_age_hash.each do |age, num|
-	# 		puts "There are #{num} '#{age}' squirrels"
-	# 	end
-	# end
 end
