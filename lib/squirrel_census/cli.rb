@@ -15,6 +15,7 @@ class SquirrelCensus::CLI
 		greeting
 		command_list
 		input = gets.strip.downcase
+		input_validator(input)
 		while input != 'exit'
 			case input
 				when 'main'
@@ -37,8 +38,13 @@ class SquirrelCensus::CLI
 			spacer
 			puts "Please enter main/total/colors/max/dates/exit : "
 			input = gets.strip.downcase
+			input_validator(input)
 			spacer
 		end
+	end
+
+	def input_validator(input)
+		puts "INVALID COMMAND!" if !['exit', 'main', 'total', 'colors', 'max', 'dates', 'shift', 'help'].include?(input)
 	end
 
 
