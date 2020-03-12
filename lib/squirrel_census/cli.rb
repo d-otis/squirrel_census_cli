@@ -111,6 +111,7 @@ class SquirrelCensus::CLI
 			puts ""
 			puts "Invalid Input : Please enter a number from the list"
 			puts ""
+			user_date_select
 		else
 			get_selected_date(index)
 		end
