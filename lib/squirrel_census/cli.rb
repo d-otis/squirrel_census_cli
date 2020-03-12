@@ -36,7 +36,7 @@ class SquirrelCensus::CLI
 					command_list
 			end
 			spacer
-			puts "Please enter main/total/colors/max/dates/exit : "
+			puts "Please enter main/total/colors/max/dates/shift/exit : "
 			input = gets.strip.downcase
 			input_validator(input)
 			spacer
